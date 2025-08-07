@@ -2,7 +2,7 @@ USE exampilot;
 
 -- Add the SQL database dump for frontend content here.
 
-CREATE TABLE home_page (
+CREATE TABLE IF NOT EXISTS home_page (
  id INT AUTO_INCREMENT PRIMARY KEY,
     slide_index VARCHAR(255),
     slide_thumb VARCHAR(255),
@@ -42,7 +42,7 @@ CREATE TABLE home_page (
     recent_news_subtitle TEXT
 );
 
-CREATE TABLE settings (
+CREATE TABLE IF NOT EXISTS settings (
  id INT AUTO_INCREMENT PRIMARY KEY,
  site_title VARCHAR(255),
  site_description TEXT,
@@ -57,12 +57,12 @@ CREATE TABLE settings (
  favicon_image VARCHAR(255)
 );
 
-CREATE TABLE frontend (
+CREATE TABLE IF NOT EXISTS frontend (
  id INT AUTO_INCREMENT PRIMARY KEY,
+ app_name VARCHAR(255),
  page_slug VARCHAR(255),
  page_title VARCHAR(255),
  page_content LONGTEXT,
  meta_description TEXT,
  meta_keywords TEXT
 );
-
